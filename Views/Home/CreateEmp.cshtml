@@ -1,0 +1,36 @@
+﻿@model WebApplication10.Models.EmpModel
+
+@using (Html.BeginForm("CreateEmp", "Home", FormMethod.Post))
+{
+    <style>
+        .danger{
+            color:red;
+        }
+    </style>
+
+    @Html.HiddenFor(a => a.Id);
+    <div class="form-group">
+        <tabel>Name</tabel>
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control", @placeholder = "Enter The Name" })
+        @Html.ValidationMessageFor(a => a.Name, "", new {@class="danger"})
+    </div>
+    <div class="form-group">
+        <tabel>Email</tabel>
+        @Html.TextBoxFor(a => a.Email, new { @class = "form-control", @placeholder = "Enter The Email" })
+        @Html.ValidationMessageFor(a => a.Email, "", new { @class = "danger" })
+    </div>
+    <div class="form-group">
+        <tabel>MobileNo</tabel>
+        @Html.TextBoxFor(a => a.MobileNo, new { @class = "form-control", @placeholder = "Enter The MobileNo" })
+        @Html.ValidationMessageFor(a => a.MobileNo, "", new { @class = "danger" })
+    </div>
+    <div class="form-group">
+        <tabel>Adresss</tabel>
+        @Html.TextBoxFor(a => a.Address, new { @class = "form-control", @placeholder = "Enter The Address" })
+        @Html.ValidationMessageFor(a => a.Address, "", new { @class = "danger" })
+    </div>
+
+    <button type="submit" class="btn btn-danger mt-4">Submit</button>
+    <button type="reset" class="btn btn-danger mt-4">Reset</button>
+}
+
